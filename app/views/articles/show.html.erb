@@ -1,0 +1,13 @@
+<h1><%= @article.title %></h1>
+<%= link_to edit_article_path(@article) do %>
+  <i class='fa-solid fa-pen'></i>
+<% end %>
+
+<%= link_to article_path(@article),
+            data: { turbo_method: :delete, turbo_confirm: "Êtes-vous sûr?" } do %>
+  <i class="fa fa-trash"></i>
+<% end %>
+
+<p><%= @article.content %></p>
+
+<%= link_to "back", articles_path %>

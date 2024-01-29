@@ -1,0 +1,9 @@
+<h1>Articles#index</h1>
+<ul>
+  <% @articles.each do |article| %>
+    <li>
+      <p><%= link_to article.title, article_path(article)  %></p>
+      <p> <%= truncate(article.content, length: 40) %> </p>
+    </li>
+  <% end %>
+</ul>

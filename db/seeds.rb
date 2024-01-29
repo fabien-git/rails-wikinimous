@@ -7,3 +7,15 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+require 'faker'
+
+puts "destroy in progress"
+Article.destroy_all
+puts "destroy ok!"
+
+puts "creating in progress"
+10.times do |i|
+  title = Faker::Book.title
+  content = Faker::Lorem.sentence(word_count: 50, random_words_to_add: 10)
+  Article.create(title: title, content: content)
+end
